@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="inputValue">
+    <button @click="add">提交</button>
+    <ul>
+        <li v-for="item in list">{{item}}</li>
+    </ul>
+</div>
+<script>
+    var app=new Vue({
+         el:'#app',
+         data:{
+             list:[
+                 "第一节课",
+                 "第二节课",
+                 "第三节课"
+             ],
+          inputValue : ''
+        },
+        methods:{
+            add:function (){
+                this.list.push(this.inputValue);
+            }
+        }
+
+
+    })
+</script>
+</body>
+</html>
